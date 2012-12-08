@@ -4,6 +4,7 @@
         child1 value
         <child11>child11 value</child11>
         <child12>child12 value</child12>
+        <testDefault>testDefault value</testDefault>
     </child>
     <child>
         child2 value
