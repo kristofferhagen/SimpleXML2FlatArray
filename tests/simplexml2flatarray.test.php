@@ -18,13 +18,15 @@ class SimpleXML2FlatArray_Test extends PHPUnit_Framework_TestCase
             array(
                 "child" => "child2 value",
                 "child21" => "child21 value",
-                "child22" => "child22 value"
+                "child22" => "child22 value",
             )
         );
         
         $xml = simplexml_load_file('testfile.xml');
         $data = new SimpleXML2FlatArray($xml);
+        $data = $data->get();
 
-        $this->assertEquals($expected_array, $data->get());
+        $this->assertInternalType('array', $data);
+        $this->assertEquals($expected_array, $data);
     }
 }
