@@ -36,7 +36,7 @@ class SimpleXML2FlatArray
      */
     public function __construct(SimpleXMLElement $xml, $defaults = array())
     {
-        $this->parse($xml, array(), $defaults); 
+        $this->parse($xml, $defaults);
     }
 
     /**
@@ -54,7 +54,7 @@ class SimpleXML2FlatArray
      * 
      * @return array Array containing values
      */
-    private function parse($xml, $values = array(), $defaults = array())
+    private function parse($xml, $values = array())
     {
         // Get children of xml document
         $children = $xml->children();
@@ -78,7 +78,7 @@ class SimpleXML2FlatArray
             if ($child->count() > 0)
             {
                 $children_is_parent = TRUE;
-                $this->parse($child, $values, $defaults);
+                $this->parse($child, $values);
             }
         }
 
@@ -86,7 +86,7 @@ class SimpleXML2FlatArray
         // from $values buffer to $this->rows result container
         if (!$children_is_parent)
         {
-            $this->rows[] = array_merge($defaults, $values);
+            $this->rows[] = $values;
         }
     }
 }
