@@ -14,5 +14,5 @@ Option 1: Load XML data from file and parse
 
 Option 2: Load XML from variable
 
-    $data = new SimpleXML2FlatArray($xml);
+    $data = new SimpleXML2FlatArray(simplexml_load_string($xml));
     $data = $data->get();
