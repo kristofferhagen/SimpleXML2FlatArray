@@ -30,7 +30,7 @@ class SimpleXML2FlatArray_Test extends PHPUnit_Framework_TestCase
         $this->assertInternalType('array', $data);
         $this->assertEquals($expected_array, $data);
     }
-    
+
     /**
      * Test get with default value
      */
@@ -50,7 +50,7 @@ class SimpleXML2FlatArray_Test extends PHPUnit_Framework_TestCase
                 "testDefault" => "testDefault value"
             )
         );
-        
+
         $xml = simplexml_load_file('testfile.xml');
         $data = new SimpleXML2FlatArray($xml, array(
             "testDefault" => "testDefault value"
