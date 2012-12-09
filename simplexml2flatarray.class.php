@@ -15,7 +15,7 @@
  *      $data = $data->get();
  * 
  * - Option 2: Load XML from variable
- *      $data = new SimpleXML2FlatArray($xml);
+ *      $data = new SimpleXML2FlatArray(simplexml_load_string($xml));
  *      $data = $data->get();
  * 
  * @author  Kristoffer Rødsdalen Hagen <kristoffer.r.hagen@gmail.com>
