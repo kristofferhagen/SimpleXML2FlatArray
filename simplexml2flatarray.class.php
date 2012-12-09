@@ -49,8 +49,8 @@ class SimpleXML2FlatArray
      */
     public function callback($name, $callback)
     {
-       // Store the callback in callbacks array
-       $this->callbacks[$name] = $callback;
+        // Store the callback in callbacks array
+        $this->callbacks[$name] = $callback;
     }
 
     /**
