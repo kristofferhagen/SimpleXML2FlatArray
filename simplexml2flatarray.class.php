@@ -32,11 +32,24 @@ class SimpleXML2FlatArray
     protected $rows = array();
 
     /**
+     * Callbacks
+     */
+    protected $callbacks = array();
+
+    /**
      * Constructor
      */
     public function __construct(SimpleXMLElement $xml, $defaults = array())
     {
         $this->parse($xml, $defaults);
+    }
+
+    /**
+     * Register a callback
+     */
+    public function callback($callback)
+    {
+       // 
     }
 
     /**
