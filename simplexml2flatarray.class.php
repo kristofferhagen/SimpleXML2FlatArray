@@ -47,7 +47,7 @@ class SimpleXML2FlatArray
     /**
      * Register a callback
      */
-    public function callback($callback)
+    public function callback($name, $callback)
     {
        // 
     }
