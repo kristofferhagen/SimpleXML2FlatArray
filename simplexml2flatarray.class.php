@@ -69,7 +69,7 @@ class SimpleXML2FlatArray
     /**
      * Parse XML
      * 
-     * @return array Array containing values
+     * @return void
      */
     private function parse($xml, $values = array())
     {
