@@ -25,6 +25,16 @@
 class SimpleXML2FlatArray
 {
     /**
+     * SimpleXMLElement Object
+     */
+    protected $xml;
+
+    /**
+     * Defaults
+     */
+    protected $defaults = array();
+
+    /**
      * Result container
      * 
      * Contains flat arrays
@@ -36,7 +46,8 @@ class SimpleXML2FlatArray
      */
     public function __construct(SimpleXMLElement $xml, $defaults = array())
     {
-        $this->parse($xml, $defaults);
+        $this->xml      = $xml;
+        $this->defaults = $defaults;
     }
 
     /**
@@ -46,6 +57,12 @@ class SimpleXML2FlatArray
      */
     public function get()
     {
+        // Only parse xml if we havent already
+        if ($this->rows === array())
+        {
+            $this->parse($this->xml, $this->defaults);
+        }
+
         return $this->rows;
     }
     
