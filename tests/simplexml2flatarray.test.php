@@ -64,4 +64,35 @@ class SimpleXML2FlatArray_Test extends \PHPUnit_Framework_TestCase
         $this->assertInternalType('array', $data);
         $this->assertEquals($expected_array, $data);
     }
+
+    /**
+     * Test iteration
+     */
+    public function testIteration()
+    {
+        $expected_array = array(
+            array(
+                "child" => "child1 value",
+                "child11" => "child11 value",
+                "child12" => "child12 value",
+                "testDefault" => "testDefault value"
+            ),
+            array(
+                "child" => "child2 value",
+                "child21" => "child21 value",
+                "child22" => "child22 value",
+            )
+        );
+
+        $xml = simplexml_load_file('testfile.xml');
+        $data = new SimpleXML2FlatArray($xml);
+
+        $result = array();
+        foreach ($data as $k => $v)
+        {
+            $result[$k] = $v;
+        }
+
+        $this->assertEquals($expected_array, $result);
+    }
 }

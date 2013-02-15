@@ -24,7 +24,7 @@ namespace KristofferHagen\Library\SimpleXML2FlatArray;
  * @link    https://github.com/kristofferhagen/SimpleXML2FlatArray
  * @license http://opensource.org/licenses/mit-license.php
  */
-class SimpleXML2FlatArray
+class SimpleXML2FlatArray implements \Iterator
 {
     /**
      * SimpleXMLElement Object
@@ -67,7 +67,7 @@ class SimpleXML2FlatArray
 
         return $this->rows;
     }
-    
+
     /**
      * Parse XML
      * 
@@ -108,5 +108,36 @@ class SimpleXML2FlatArray
             $this->rows[] = $values;
         }
     }
-}
 
+    /*
+     * Iteration functions
+     */
+    public function rewind()
+    {
+        // Make sure the xml is parsed before the loop
+        $this->get();
+
+        reset($this->rows);
+    }
+
+    public function current()
+    {
+        return current($this->rows);
+    }
+
+    public function key()
+    {
+        return key($this->rows);
+    }
+
+    public function next()
+    {
+        return next($this->rows);
+    }
+
+    public function valid()
+    {
+        $key = key($this->rows);
+        return ($key !== NULL && $key !== FALSE);
+    }
+}
