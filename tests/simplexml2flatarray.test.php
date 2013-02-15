@@ -1,8 +1,12 @@
 <?php
 
+namespace KristofferHagen\Library\SimpleXML2FlatArray\Tests;
+
+use KristofferHagen\Library\SimpleXML2FlatArray\SimpleXML2FlatArray;
+
 require '../simplexml2flatarray.class.php';
 
-class SimpleXML2FlatArray_Test extends PHPUnit_Framework_TestCase
+class SimpleXML2FlatArray_Test extends \PHPUnit_Framework_TestCase
 {
     /**
      * Test SimpleXML2FlatArray::get() output is correct array

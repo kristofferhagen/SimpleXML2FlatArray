@@ -1,5 +1,7 @@
 <?php
 
+namespace KristofferHagen\Library\SimpleXML2FlatArray;
+
 /**
  * SimpleXML2FlatArray
  * 
@@ -44,7 +46,7 @@ class SimpleXML2FlatArray
     /**
      * Constructor
      */
-    public function __construct(SimpleXMLElement $xml, $defaults = array())
+    public function __construct(\SimpleXMLElement $xml, $defaults = array())
     {
         $this->xml      = $xml;
         $this->defaults = $defaults;
