@@ -24,3 +24,12 @@ $xml = new SimpleXML2FlatArray($simplexml);
 
 $data = $xml->get();
 ```
+
+You can aslo iterate over the SimpleXML2FlatArray object, as shown below:
+```php
+foreach ($xml as $v)
+{
+    // $v is a key => value pair of values parsed from the xml
+    var_dump($v);
+}
+```
