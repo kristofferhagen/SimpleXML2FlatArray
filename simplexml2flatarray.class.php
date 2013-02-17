@@ -10,16 +10,6 @@ namespace KristofferHagen\Library\SimpleXML2FlatArray;
  * 
  * Useful for storing xml data in a database.
  * 
- * Usage:
- * 
- * - Option 1: Load XML data from file and parse
- *      $data = new SimpleXML2FlatArray(simplexml_load_file('data.xml'));
- *      $data = $data->get();
- * 
- * - Option 2: Load XML from variable
- *      $data = new SimpleXML2FlatArray(simplexml_load_string($xml));
- *      $data = $data->get();
- * 
  * @author  Kristoffer Rødsdalen Hagen <kristoffer.r.hagen@gmail.com>
  * @link    https://github.com/kristofferhagen/SimpleXML2FlatArray
  * @license http://opensource.org/licenses/mit-license.php
