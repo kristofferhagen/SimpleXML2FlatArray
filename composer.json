@@ -1,0 +1,22 @@
+{
+    "name": "kristofferhagen/simplexml2flatarray",
+    "type": "library",
+    "description": "Converts an XML document to several flat arrays containing values from parent elements using SimpleXML",
+    "keywords": ["simplexml", "convert", "flat array"],
+    "homepage": "https://github.com/kristofferhagen/SimpleXML2FlatArray",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kristoffer Rødsdalen Hagen",
+            "email": "kristoffer.r.hagen@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "autoload": {
+        "psr-0": { "KristofferHagen\\": "src/" }
+    },
+    "minimum-stability": "dev"
+}
+

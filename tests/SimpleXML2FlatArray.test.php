@@ -4,7 +4,7 @@ namespace KristofferHagen\Library\SimpleXML2FlatArray\Tests;
 
 use KristofferHagen\Library\SimpleXML2FlatArray\SimpleXML2FlatArray;
 
-require '../src/KristofferHagen/Library/SimpleXML2FlatArray/SimpleXML2FlatArray.php';
+require '../vendor/autoload.php';
 
 class SimpleXML2FlatArray_Test extends \PHPUnit_Framework_TestCase
 {
