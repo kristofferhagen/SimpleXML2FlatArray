@@ -60,8 +60,7 @@ class SimpleXML2FlatArray implements \Iterator
     public function get()
     {
         // Only parse xml if we havent already
-        if ($this->rows === array())
-        {
+        if ($this->rows === array()) {
             $this->parse($this->xml, $this->defaults);
         }
 
@@ -82,20 +81,17 @@ class SimpleXML2FlatArray implements \Iterator
         $children_is_parent = FALSE;
 
         // Get each child and add to $values if it has no children of its own
-        foreach ($children as $key => $child)
-        {
+        foreach ($children as $key => $child) {
             // Remove unnecessary whitespace from value of the child
             $val = trim((string) $child);
 
             // Add value to buffer
-            if ($val != '')
-            {
+            if ($val != '') {
                 $values[$key] = $val;
             }
 
             // If the child has children of its own, parse it recursively
-            if ($child->count() > 0)
-            {
+            if ($child->count() > 0) {
                 $children_is_parent = TRUE;
                 $this->parse($child, $values);
             }
@@ -103,8 +99,7 @@ class SimpleXML2FlatArray implements \Iterator
 
         // If the child has no children of its own, store the information
         // from $values buffer to $this->rows result container
-        if (!$children_is_parent)
-        {
+        if (!$children_is_parent) {
             $this->rows[] = $values;
         }
     }
@@ -141,3 +136,4 @@ class SimpleXML2FlatArray implements \Iterator
         return ($key !== NULL && $key !== FALSE);
     }
 }
+
